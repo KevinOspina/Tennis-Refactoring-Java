@@ -38,7 +38,7 @@ public class TennisGame1 implements TennisGame {
     }
     
     
-    public void tempScore() {
+    public void tempScoreMatch() {
     	int minusResult = m_score1-m_score2;
     	
     	if (minusResult==1) { 
@@ -71,7 +71,7 @@ public class TennisGame1 implements TennisGame {
     			score+="-";
     			temp_Score = m_score2;
     		}
-    		tempScore(temp_Score)
+    		tempScore(temp_Score);
     	}
     }
     
@@ -93,17 +93,18 @@ public class TennisGame1 implements TennisGame {
     }
     
     
-    public String getScore() {
+    public getScore() {
       
     	if(m_score1 == m_score2) {
     		draft();
-    	}
+        }
     	else if(m_score1 >= 4 ||  m_score2 >=4)
     	{
-    		tempScore();
+    		tempScoreMatch();
     	}
     	else {
-    		return score;
-    	}
+    		roundScore();
+        }
+        return score;
     }
 }
